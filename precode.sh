@@ -18,7 +18,7 @@ touch dir2/empty
 # создаём файл task/dir2/hello.sh с таким содержанием:
 # #!/bin/bash
 # echo "$1, привет!" 
-echo -e '#!/bin/bash\n echo "$1, привет!"' >> dir2/hello.sh
+echo -e '#!/bin/bash\n echo "$1, привет!"' > dir2/hello.sh
 # устанавливаем для task/dir2/hello.sh права rwxrw-r--
 chmod 764 dir2/hello.sh
 
@@ -42,6 +42,7 @@ dir2/hello.sh "$NAME" >> dir1/summary.txt
 # перемещаем с переименованием task/dir1/summary.txt в task/Практическое задание
 mv dir1/summary.txt "Практическое задание"
 # выводим на консоль содержимое файла task/Практическое задание
+cat "Практическое задание" 
 # ищем в файле "Практическое задание" строки, которые содержат слово "dir"
 # и затем отсортировываем их
 cat "Практическое задание" | grep "dir" | sort
